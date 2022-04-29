@@ -1,0 +1,36 @@
+<p>staff works!</p>
+<div class="container w-25 border alert alert-success">
+    <div class="fs-2 fw-bold text-center text-white bg-success py-3 mt-3 mb-4 ">Staff Register</div>
+    <form [formGroup]="staffFrm" (ngSubmit)="staffFrmFun()">
+        <div class="form-group">
+             <label for="">Name :</label>
+             <input type="text" class="form-control" formControlName="name" placeholder="Enter Name" required="{'is-invalid':isSubmittesd && f.name.errors}">
+             <div *ngIf="isSubmitted && f.name.errors" class="invalid-feedback">Name is required</div>
+        </div>
+        <div class="form-group">
+            <label for="">Age :</label>
+            <input type="number" class="form-control" formControlName="age" placeholder="Enter age" required="{'is-invalid':isSubmittesd && f.age.errors}">
+            <div *ngIf="isSubmitted && f.age.errors" class="invalid-feedback">Age is required</div>
+       </div>
+       <div class="form-group">
+            <label for="">EMP-ID :</label>
+            <input type="number" class="form-control" formControlName="empId" placeholder="Enter Emp-ID" required="{'is-invalid':isSubmittesd && f.empId.errors}">
+             <div *ngIf="isSubmitted && f.empId.errors" class="invalid-feedback">EMP-ID is required</div>
+        </div>
+        <div class="form-group">
+            <label for="">Branch :</label>
+            <select name="" id="" class="form-control" formControlName="branch" required [ngClass]="{'is-invalid':isSubmitted && f.role.errors}">
+                <option *ngFor="let x of branches">{{x}}</option>
+            </select>
+            <div *ngIf="isSubmitted && f.role.errors" class="invalid-feedback">Role is required</div>
+       </div>
+       <div class="form-group">
+             <label for="">Role :</label>
+             <select name="" id="" class="form-control" formControlName="role" required [ngClass]="{'is-invalid':isSubmitted && f.role.errors}">
+                <option *ngFor="let x of roles">{{x}}</option>
+            </select>
+            <div *ngIf="isSubmitted && f.role.errors" class="invalid-feedback">Role is required</div>
+        </div>
+        <input type="submit" class="btn btn-success px-5 py-2 my-3" value="Send Data">
+    </form>
+</div>

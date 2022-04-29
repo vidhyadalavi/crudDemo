@@ -1,0 +1,30 @@
+<p>details works!</p>
+<div class="details p-4">
+    <div class="fs-1 fw-bold text p-3">Staff Details
+            <div class="btn float-end mb-2 "><button pButton type="button"  class="p-button-warning p-button-rounded" (click)="addDataFun()">Add Data</button></div>
+   </div>
+    <table class="table table-bordered">
+        <tr>
+            <th>ID</th>
+            <th>Name</th>
+            <th>Age</th>
+            <th>Emp-ID</th>
+            <th>Branch</th>
+            <th>Role</th>
+            <th>Edit</th>
+            <th>Delete</th>
+        </tr>
+        <tr *ngFor="let dt of listData">
+            <td>{{dt.id}}</td>
+            <td>{{dt.name}}</td>
+            <td>{{dt.age}}</td>
+            <td>{{dt.empId}}</td>
+            <td>{{dt.branch}}</td>
+            <td>{{dt.role}}</td>
+            <td><button pButton type="button"  class="p-button-success p-button-rounded" (click)="onEdit(dt.id, dt)">Edit</button>
+            </td>
+            <td><button pButton type="button" class="p-button-danger p-button-rounded" (click)="onDelete(dt.id)">Delete</button>
+            </td>
+        </tr>
+     </table>
+</div>
